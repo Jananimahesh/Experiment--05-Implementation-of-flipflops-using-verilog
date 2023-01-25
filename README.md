@@ -111,14 +111,63 @@ Q(t+1)=T′Q(t)+TQ(t)′
 6.Give the respective inputs for timing diagram and obtain the results.
 
 
-
-### PROGRAM 
-
-/*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
 Developed by: janani.m
 RegisterNumber: 22006734 
-*/
+
+
+program
+
+SR FLIP FLOP
+
+module sr(S,R,CLK,Q,QBAR);
+input S,R,CLK;
+output Q,QBAR;
+wire X,Y;
+nand(X,S,CLK);
+nand(Y,R,CLK);
+nand(Q,X,QBAR);
+nand(QBAR,Y,Q);
+endmodule
+
+
+JK FLIP FLOP
+
+module jk(J,K,CLK,Q,QBAR);
+input J,K,CLK;
+output Q,QBAR;
+wire P,S;
+nand(P,J,CLK,QBAR);
+nand(S,K,CLK,Q);
+nand(Q,P,QBAR);
+nand(QBAR,S,Q);
+endmodule
+
+D FLIP FLOP
+
+module DG(D,CLK,Q,QBAR);
+input D,CLK;
+output Q,QBAR;
+assign DBAR=~D;
+wire X,Y;
+nand(X,D,CLK);
+nand(Y,DBAR,CLK);
+nand(Q,X,QBAR);
+nand(QBAR,Y,Q);
+endmodule
+
+T FLIP FLOP
+module TF(T,CLK,Q,QBAR);
+input T,CLK;
+output Q,QBAR;
+wire S,R;
+nand(S,T,CLK,QBAR);
+nand(R,T,CLK,Q);
+nand(Q,S,QBAR);
+nand(QBAR,R,Q);
+endmodule
+
+
 
 
 
@@ -127,6 +176,21 @@ RegisterNumber: 22006734
 
 ### RTL LOGIC FOR FLIPFLOPS 
 
+RTL realization for SR flip flop
+
+![image](https://user-images.githubusercontent.com/119432417/214613679-bb8ee012-dc3c-43bb-91cd-4c9b3f28b50b.png)
+
+RTL REALIZATION FOR JK FLIP FLOP
+
+![image](https://user-images.githubusercontent.com/119432417/214618440-a3c3b778-ea3f-4534-8432-0a441006e9c4.png)
+
+RTL REALIZATION FOR D FLIP FLOP
+
+![image](https://user-images.githubusercontent.com/119432417/214623903-6cb033e8-f440-4a7e-8c7f-2c2cc9abefd6.png)
+
+RTL REALIZATIN FOR T FLIP FLOP
+
+![image](https://user-images.githubusercontent.com/119432417/214629655-91ba28ee-22aa-4ade-b2aa-c459770ad233.png)
 
 
 
@@ -135,7 +199,31 @@ RegisterNumber: 22006734
 
 
 
-### TIMING DIGRAMS FOR FLIP FLOPS 
+
+
+
+
+
+
+### TIMING DIGRAMS FOR FLIP FLOPS
+
+TIMING DIAGRAM FOR SR FLIP FLOP
+
+![image](https://user-images.githubusercontent.com/119432417/214626905-a1fb6fc5-d1c7-4dd5-8411-2de8f8532300.png)
+
+TIMING DIAGRAM FOR JK FLIP FLOP
+
+![image](https://user-images.githubusercontent.com/119432417/214627703-4b936b43-527f-448a-8769-db8b0965818b.png)
+
+TIMING DIAGRAM FOR D FLIP FLOP
+
+![image](https://user-images.githubusercontent.com/119432417/214628278-3fd3597b-6be8-4fce-9f8f-fc4c1fdfbdde.png)
+
+TIMING DIAGRAM FOR T FLIP FLOP
+
+![image](https://user-images.githubusercontent.com/119432417/214628583-babd6b98-bd3a-40f7-a0b4-b74f272a56fd.png)
+
+
 
 
 
