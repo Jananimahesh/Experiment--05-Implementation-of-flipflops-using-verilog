@@ -233,3 +233,7 @@ TIMING DIAGRAM FOR T FLIP FLOP
 
 
 ### RESULTS 
+
+Hence all the flipflops are implemented using verilog and their functionality has been validated using their functional tables.
+
+
